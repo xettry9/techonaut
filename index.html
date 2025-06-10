@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Admissions - Class 11</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Admission Programme 2082</h1>
+            <nav>
+                <a href="#admission-form">Admission Form</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Shape Your Future With Us</h2>
+                <p>Admissions open for Class 11. Choose your own path.</p>
+            </div>
+        </section>
+
+        <section class="admission-section" id="admission-form">
+            <form class="admission-form" autocomplete="off" action="#" method="post">
+                <h2>Class 11 Admission Form</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">First Name</label>
+                        <input type="text" id="name" name="name" required placeholder="First name">
+                    </div>
+                <div class="form-group">
+                    <label for="middle-name">Middle Name</label>
+                    <input type="text" id="middle-name" name="middle-name" placeholder="Middle name (optional)">
+                </div>
+                    <div class="form-group">
+                        <label for="name">Last Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Last name">
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="9XXXXXX">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" required placeholder="Your address">
+                    </div>
+                    <div class="form-group">
+                        <label for="prev-school">Previous School</label>
+                        <input type="text" id="prev-school" name="prev-school" required placeholder="School name">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="gpa">SEE GPA</label>
+                        <input type="number" step="0.01" min="0" max="4" id="gpa" name="gpa" required placeholder="e.g. 3.85">
+                    </div>
+                    <div class="form-group">
+                        <label for="faculty">Select Faculty</label>
+                        <select id="faculty" name="faculty" required>
+                            <option value="">-- Select Faculty --</option>
+                            <option value="science">Science</option>
+                            <option value="management">Management</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">-- Select Gender --</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="subjects-area" class="subjects-area"></div>
+                <div class="form-row achievement-group">
+                    <div class="form-group full">
+                        <label for="achievements">Scholarship / Achievements / Extra-curricular (if any)</label>
+                        <textarea id="achievements" name="achievements" rows="2" placeholder="Mention any awards, scholarships, or achievements"></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group full">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Anything else you'd like us to know?"></textarea>
+                    </div>
+                </div>
+                <button type="submit">Submit Application</button>
+            </form>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="contact-card">
+                <h2>Contact Us</h2>
+                <p>If you have any questions, please reach out to us:</p>
+                <ul>
+                    <li>Email: <a href="techonaut07@gmail.com">techonaut07@gmail.com</a></li>
+                    <li>Phone: <a href="tel:+977-9764199675">+977-9764199675</a></li>
+                    <li>Address: Dang, Nepal</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy;techonaut07. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.getElementById('faculty').addEventListener('change', showSubjects);
+
+    function showSubjects() {
+        const faculty = document.getElementById('faculty').value;
+        const area = document.getElementById('subjects-area');
+        area.innerHTML = '';
+        if (faculty === 'science') {
+            area.innerHTML = `
+                <div class="subjects-card animate-in">
+                    <div>
+                        <strong>Compulsory Subjects (Science):</strong>
+                        <ul>
+                            <li>English</li>
+                            <li>Nepali</li>
+                            <li>Physics</li>
+                            <li>Chemistry</li>
+                        </ul>
+                    </div>
+                    <div class="optional-group">
+                        <strong>Optional Subjects:</strong>
+                        <div>
+                            <span>Group 1 (Choose one):</span>
+                            <div class="radio-group">
+                                <label><input type="radio" name="science_opt1" value="Biology" required> Biology</label>
+                                <label><input type="radio" name="science_opt1" value="Computer Science"> Computer Science</label>
+                            </div>
+                        </div>
+                        <div>
+                            <span>Group 2 (Choose one):</span>
+                            <div class="radio-group">
+                                <label><input type="radio" name="science_opt2" value="Mathematics" required> Mathematics</label>
+                                <label><input type="radio" name="science_opt2" value="Social Studies"> Social Studies</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else if (faculty === 'management') {
+            area.innerHTML = `
+                <div class="subjects-card animate-in">
+                    <div>
+                        <strong>Compulsory Subjects (Management):</strong>
+                        <ul>
+                            <li>English</li>
+                            <li>Nepali</li>
+                            <li>Accountancy</li>
+                            <li>Economics</li>
+                        </ul>
+                    </div>
+                    <div class="optional-group">
+                        <strong>Optional Subjects:</strong>
+                        <div>
+                            <span>Group 1 (Choose one):</span>
+                            <div class="radio-group">
+                                <label><input type="radio" name="mgmt_opt1" value="Business Studies" required> Business Studies</label>
+                                <label><input type="radio" name="mgmt_opt1" value="Hotel Management"> Hotel Management</label>
+                            </div>
+                        </div>
+                        <div>
+                            <span>Group 2 (Choose one):</span>
+                            <div class="radio-group">
+                                <label><input type="radio" name="mgmt_opt2" value="Computer Science" required> Computer Science</label>
+                                <label><input type="radio" name="mgmt_opt2" value="Travel & Tourism"> Travel & Tourism</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    }
+    </script>
+</body>
+</html>
